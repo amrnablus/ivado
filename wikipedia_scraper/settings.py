@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import os
 
 BOT_NAME = 'wikipedia_scraper'
 
@@ -88,7 +89,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 
-MONGODB_SERVER = "localhost"
+MONGODB_SERVER = os.environ.get("MONGO_HOST")
 MONGODB_PORT = 27017
 MONGODB_DB = "ivado"
 MONGODB_COLLECTION = "museums"
