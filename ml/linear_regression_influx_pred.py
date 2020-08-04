@@ -38,7 +38,7 @@ pd.set_option('display.max_rows', 10000)
 df = pd.DataFrame(musuems)
 
 df['Visitors'] = df['Visitors'].apply(lambda x: parse_number(x))
-print(df.iloc[25])
+# print(df.iloc[25])
 
 # print(df['Public transit access count'].mean())
 # pta_mean = df['Public transit access count'].mean()

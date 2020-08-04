@@ -1,9 +1,10 @@
 #!/bin/bash
 
 set -m
-mongod --fork --logpath /var/log/mongodb.log &
+#mongod --fork --logpath /var/log/mongodb.log &
 #fg 1
 
+sleep 1m
 cd /home/ivado/ivado
 
 scrapy crawl musmuems

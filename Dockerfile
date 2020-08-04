@@ -1,4 +1,4 @@
-FROM mongo
+FROM ubuntu
 
 #Install git
 
@@ -12,6 +12,8 @@ RUN apt-get update && \
 
 # mongod --fork --logpath /var/log/mongodb.log
 COPY ./start_mongo.sh /home/ivado/
+
+ARG INCUBATOR_VER=unknown
 
 RUN mkdir -p /home/ivado/ && \      
            cd /home/ivado && \
@@ -35,4 +37,6 @@ RUN mkdir -p /home/ivado/ && \
 #
 # #Set working directory
 # WORKDIR /home/ivado
-CMD bash /home/ivado/start_mongo.sh
+#CMD bash /home/ivado/start_mongo.sh
+
+ENTRYPOINT ["bash", "/home/ivado/start_mongo.sh"]
