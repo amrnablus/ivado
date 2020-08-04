@@ -15,7 +15,7 @@ class MusmuemsSpider(scrapy.Spider):
     def parse(self, response):
         urls = response.xpath(MUSUEM_LIST_XPATH).extract()
         for url in urls:
-            url = "https://en.wikipedia.com/" + url
+            url = "https://en.wikipedia.com" + url
             print("FOLLOWING URL: {}".format(url))
             yield response.follow(url, callback=self.parse_musuem_metadata)
 
