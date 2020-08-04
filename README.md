@@ -1,8 +1,10 @@
 # Running the project
 To create a docker container, run the following command: 
 ```bash
-curl  https://raw.githubusercontent.com/amrnablus/ivado/master/DockerFile | docker build -
+curl  https://raw.githubusercontent.com/amrnablus/ivado/master/DockerFile | docker build - --build-arg MONGO_HOST=<mongo_host>
+
 ```
+(i didn't get enough time to add mongo as a dependency, it needs to be added separately)
 
 The docker file will create a docker container and execute the requirements, the image can be accessed and checked for the results in the directory: `/home/ivado`
 
